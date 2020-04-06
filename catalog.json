@@ -2,7 +2,7 @@
     "catalog": [
         {
             "name": "New South Wales COVID-19 Cases",
-            "url": "https://gist.githubusercontent.com/kring/a42e7d83336ec04b032aff7cda71aaf4/raw/f4c444ac6e915b4eab8f4a0efc1652cf4725b382/covid-19-cases-by-notification-date-and-postcode-local-health-district-and-local-government-area-for-terria.csv",
+            "url": "https://raw.githubusercontent.com/kring/nsw-covid-to-terria/master/covid-19-cases-by-notification-date-and-postcode-local-health-district-and-local-government-area-for-terria.csv",
             "type": "csv",
             "description": "COVID-19 cases by notification date and postcode, local health district, and local government area.\n\nThe data is for confirmed COVID-19 cases only based on location of usual residence, not necessarily where the virus was contracted. The case definition of a confirmed case is a person who tests positive to a validated specific SARS-CoV-2 nucleic acid test or has the virus identified by electron microscopy or viral culture, at a reference laboratory.\n\nThe underlying dataset was assessed to measure the risk of identifying an individual and the level of sensitivity of the information gained if it was known that an individual was in the dataset. The dataset was then treated to mitigate these risks, including suppressing and aggregating data.\n\nData obtain from [Data.NSW](https://data.nsw.gov.au/data/dataset/covid-19-cases-by-location/resource/21304414-1ff1-4243-a5d2-f52778048b29) and processed for use in [TerriaJS](https://terria.io) and [NationalMap](https://nationalmap.gov.au) using [nsw-covid-to-terria](https://github.com/kring/nsw-covid-to-terria).",
             "showWarnings": false,

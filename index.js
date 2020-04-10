@@ -21,7 +21,7 @@ const last3Days = [];
 const last7Days = [];
 const total = [];
 
-let result = "date,postcode,New Cases in Last 3 Days,New Cases in Last 7 Days,Total Cases\n";
+let result = "date,postcode,New Cases This Day,New Cases in Last 3 Days,New Cases in Last 7 Days,Total Cases\n";
 
 for (let i = 0; i < postcodes.length; ++i) {
   last3Days[postcodes[i]] = [];
@@ -49,7 +49,7 @@ for (let i = 0; i < dates.length; ++i) {
     last7Days[thisPostcode] = last7Days[thisPostcode].filter(row => !row.moment.isBefore(lastSevenDays));
     last7Days[thisPostcode].push(...inThisPostcode);
 
-    result += `${thisMoment.toISOString(true)},${thisPostcode},${last3Days[thisPostcode].length},${last7Days[thisPostcode].length},${total[thisPostcode].length}\n`;
+    result += `${thisMoment.toISOString(true)},${thisPostcode},${inThisPostcode.length},${last3Days[thisPostcode].length},${last7Days[thisPostcode].length},${total[thisPostcode].length}\n`;
   }
 }
 

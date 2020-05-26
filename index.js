@@ -11,8 +11,8 @@ const parsed = papaparse.parse(csv, {
 
 const postcodes = uniq(parsed.data.map(row => row.postcode).filter(postcode => postcode && postcode.trim().length > 0 && postcode.trim() !== "0"));
 parsed.data.forEach(row => {
-  row.jsdate = Date.parse(row.notification_date);
-  row.moment = moment(row.jsdate);
+  row.moment = moment(row.notification_date, "DD/MM/YYYY");
+  row.jsdate = row.moment.valueOf();
 });
 
 const dates = sortedUniq(parsed.data.map(row => row.jsdate).filter(date => !Number.isNaN(date)).sort());

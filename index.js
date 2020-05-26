@@ -33,7 +33,7 @@ for (let i = 0; i < dates.length; ++i) {
   const thisDate = dates[i];
   const thisMoment = moment(thisDate);
 
-  const onThisDate = parsed.data.filter(row => Date.parse(row.notification_date) === thisDate);
+  const onThisDate = parsed.data.filter(row => moment(row.notification_date, "DD/MM/YYYY").valueOf() === thisDate);
 
   for (let j = 0; j < postcodes.length; ++j) {
     const thisPostcode = postcodes[j];

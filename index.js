@@ -11,7 +11,7 @@ const parsed = papaparse.parse(csv, {
 
 const postcodes = uniq(parsed.data.map(row => row.postcode).filter(postcode => postcode && postcode.trim().length > 0 && postcode.trim() !== "0"));
 parsed.data.forEach(row => {
-  row.moment = moment(row.notification_date, "DD/MM/YYYY");
+  row.moment = moment(row.notification_date, "YYYY-MM-DD");
   row.jsdate = row.moment.valueOf();
 });
 
@@ -33,7 +33,7 @@ for (let i = 0; i < dates.length; ++i) {
   const thisDate = dates[i];
   const thisMoment = moment(thisDate);
 
-  const onThisDate = parsed.data.filter(row => moment(row.notification_date, "DD/MM/YYYY").valueOf() === thisDate);
+  const onThisDate = parsed.data.filter(row => moment(row.notification_date, "YYYY-MM-DD").valueOf() === thisDate);
 
   for (let j = 0; j < postcodes.length; ++j) {
     const thisPostcode = postcodes[j];
